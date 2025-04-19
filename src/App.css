@@ -1,38 +1,634 @@
-.App {
-  text-align: center;
+/*
+Styles for homepage
+*/
+
+.homepage {
+  background-color: black;
+  color: white;
+  min-height: 82vh;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out forwards;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.name {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 65px;
+  font-weight: 400;
+  padding-left: 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.job {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  padding-right: 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.arrow-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.arrow {
+  width: 15vw;
+}
+
+.header {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-size: 65px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/*
+*About Page
+*/
+
+.about {
+  height: 80vh;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.grayarea {
+  background-color: #c6c6c6;
+  height: 5vh;
+}
+
+.a-cont-1 {
+  display: flex;
+  padding: 30px;
+}
+
+.a-cont-1-1 {
+  width: 130%;
+}
+
+.a-cont-1-2 {
+  padding: 30px;
+  padding-left: 60px;
+}
+
+.a-p-2 {
+  padding-bottom: 40px;
+}
+
+.a-header {
+  font-size: 50px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.paragraph {
+  padding-top: 250px;
+}
+
+/*
+experience and skills starts here
+*/
+
+.experienceandskills {
+  background-color: black;
+  color: rgba(45, 197, 204, 1);
+  height: 80vh;
+  padding: 30px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.exs-header {
+  font-size: 75px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.listheader {
+  font-size: 30px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin-bottom: 0.3rem;
+}
+
+.skills {
+  background-color: black;
+  color: rgba(45, 197, 204, 1);
+  height: 80vh;
+  padding: 30px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.exlist {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.exlist:nth-child(1) { animation-delay: 0.2s; }
+.exlist:nth-child(2) { animation-delay: 0.4s; }
+.exlist:nth-child(3) { animation-delay: 0.6s; }
+
+.number {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 2.6rem;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.experience-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24rem;
+  flex-wrap: wrap;
+}
+
+/* Style the image */
+.project-image {
+  width: 100%;
+  max-width: 650px;
+  max-height: 400px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+.project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 206, 209, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image:hover::after {
+  opacity: 1;
+}
+
+.skills-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24rem;
+  flex-wrap: wrap;
+}
+
+.skill-video {
+  width: 100%;
+  max-width: 600px;
+  max-height: 350px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.skill-video:hover {
+  transform: scale(1.02);
+}
+
+.skill-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 206, 209, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-video:hover::after {
+  opacity: 1;
+}
+
+.skill-list-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+/*
+contact page starts here
+*/
+
+.contact {
+  height: 80vh;
+  background-color: white;
+  padding: 45px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.c-header {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.c-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 25px;
+}
+
+.c-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+/* Wave container above buttons */
+.wave-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.wave-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-path {
+  fill: none;
+  stroke: #00CED1;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawWave 3s linear infinite;
+}
+
+.wave-path:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.wave-path:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes drawWave {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.c-2-1, .c-2-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.c-b {
+  width: 330px;
+  height: 60px;
+  background-color: #00CED1;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.c-b:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 206, 209, 0.5);
 }
 
-@keyframes App-logo-spin {
+.c-b::after {
+  content: '→';
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.c-b:hover::after {
+  transform: translateX(5px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in animation for list items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+
+/* Tablets (≥768px and <1024px) */
+@media (max-width: 1023px) {
+  /* Homepage */
+  .name {
+    font-size: 48px;
+    padding-left: 15px;
+  }
+
+  .job {
+    font-size: 16px;
+    padding-right: 15px;
+  }
+
+  .header {
+    font-size: 48px;
+    left: 50px;
+    padding-left: 15px;
+  }
+
+  .arrow {
+    width: 12vw;
+  }
+
+  /* About Page */
+  .about {
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .a-cont-1 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .a-cont-1-1 {
+    width: 100%;
+  }
+
+  .a-cont-1-2 {
+    padding: 20px;
+    padding-left: 0;
+  }
+
+  .a-header {
+    font-size: 36px;
+  }
+
+  .paragraph {
+    padding-top: 120px;
+  }
+
+  /* Experience and Skills */
+  .experienceandskills, .skills {
+    height: auto;
+    min-height: 80vh;
+    padding: 20px;
+  }
+
+  .exs-header {
+    font-size: 50px;
+  }
+
+  .listheader {
+    font-size: 24px;
+  }
+
+  .number {
+    font-size: 2rem;
+  }
+
+  .experience-content, .skills-content {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-image {
+    max-width: 450px;
+    max-height: 300px;
+  }
+
+  .skill-video {
+    max-width: 450px;
+    max-height: 250px;
+  }
+
+  /* Contact Page */
+  .contact {
+    height: auto;
+    min-height: 80vh;
+    padding: 30px;
+  }
+
+  .c-header {
+    font-size: 36px;
+  }
+
+  .c-text {
+    font-size: 20px;
+  }
+
+  .c-b {
+    width: 280px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .c-b::after {
+    font-size: 16px;
+  }
+
+  .wave-container {
+    height: 50px;
+  }
+}
+
+/* Mobile (≤767px) */
+@media (max-width: 767px) {
+  /* Homepage */
+  .homepage {
+    min-height: 70vh;
+  }
+
+  .name {
+    font-size: 36px;
+    padding-left: 10px;
+    left: 5px;
+  }
+
+  .job {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+
+  .header {
+    font-size: 32px;
+    left: 20px;
+    padding-left: 10px;
+    bottom: 40px;
+  }
+
+  .arrow {
+    width: 18vw;
+  }
+
+  .arrow-container {
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+
+  /* About Page */
+  .about {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .grayarea {
+    height: 6vh;
+  }
+
+  .a-cont-1 {
+    padding: 15px;
+  }
+
+  .a-cont-1-2 {
+    padding: 15px;
+    padding-left: 0;
+  }
+
+  .a-header {
+    font-size: 28px;
+  }
+
+  .paragraph {
+    padding-top: 80px;
+  }
+
+  .a-p-2 {
+    padding-bottom: 15px;
+  }
+
+  /* Experience and Skills */
+  .experienceandskills, .skills {
+    height: auto;
+    min-height: 60vh;
+    padding: 15px;
+  }
+
+  .exs-header {
+    font-size: 36px;
+  }
+
+  .listheader {
+    font-size: 20px;
+  }
+
+  .number {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .exlist {
+    max-width: 100%;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
+  .project-image {
+    max-width: 100%;
+    max-height: 200px;
+  }
+
+  .skill-video {
+    max-width: 100%;
+    max-height: 180px;
+  }
+
+  .skill-list-container {
+    max-width: 100%;
+  }
+
+  /* Contact Page */
+  .contact {
+    height: auto;
+    min-height: 60vh;
+    padding: 20px;
+  }
+
+  .c-header {
+    font-size: 28px;
+  }
+
+  .c-text {
+    font-size: 16px;
+  }
+
+  .c-2-1, .c-2-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .c-b {
+    width: 100%;
+    max-width: 260px;
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .c-b::after {
+    font-size: 14px;
+  }
+
+  .wave-container {
+    height: 40px;
   }
 }
